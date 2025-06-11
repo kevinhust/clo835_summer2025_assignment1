@@ -30,15 +30,15 @@ jobs:
     - name: Build and push WebApp image
       uses: docker/build-push-action@v4
       with:
-        context: ./webapp
-        file: ./webapp/Dockerfile
+        context: .
+        file: ./Dockerfile
         push: true
         tags: ${{ secrets.ECR_WEBAPP_URI }}:latest
 
     - name: Build and push MySQL image
       uses: docker/build-push-action@v4
       with:
-        context: ./mysql
-        file: ./mysql/Dockerfile
+        context: .
+        file: ./Dockerfile_mysql
         push: true
         tags: ${{ secrets.ECR_MYSQL_URI }}:latest
